@@ -1,4 +1,5 @@
 package net.ma.dao;
 
-public class Idao {
+public interface IDao {
+     double getData();
 }
