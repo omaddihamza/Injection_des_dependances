@@ -5,7 +5,7 @@
 
     <bean id="d" class="net.ma.dao.DaoImpl"/>
     <bean id="m" class="net.ma.metier.MetierImpl">
-        <property name="iDao" ref="d"/>
+        <constructor-arg ref="d"/>
     </bean>
 
 </beans>
