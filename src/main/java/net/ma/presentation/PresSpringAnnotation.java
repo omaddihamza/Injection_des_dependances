@@ -1,13 +1,14 @@
 package net.ma.presentation;
 
+
 import net.ma.metier.IMetier;
-import net.ma.metier.MetierImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class PresAnnotation {
+public class PresSpringAnnotation {
     public static void main(String[] args) {
-        IMetier metier = new MetierImpl();
-        double calcul = metier.calcul();
-        System.out.println(calcul);
-
+        ApplicationContext context = new AnnotationConfigApplicationContext("net.ma");
+        IMetier metier =  context.getBean(IMetier.class);
+        System.out.println( metier.calcul());
     }
 }
